@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private List<Movie> movies;
 
     private static final String TAG = MainActivity.class.getSimpleName();
-
+    //API-Key
     private final static String API_KEY = "3e48d40afcc1d7ea8e6f53753781ad43";
 
     @Override
