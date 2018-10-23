@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.irfan.moviesapptask.R;
@@ -25,7 +26,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
 
 
     public static class MovieViewHolder extends RecyclerView.ViewHolder {
-        ConstraintLayout moviesLayout;
+        LinearLayout moviesLayout;
         TextView movieTitle;
         TextView date,adult;
         ImageView poster;
@@ -33,7 +34,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
 
         public MovieViewHolder(View v) {
             super(v);
-            moviesLayout = (ConstraintLayout) v.findViewById(R.id.movies_layout);
+            moviesLayout = (LinearLayout) v.findViewById(R.id.movies_layout);
             movieTitle = (TextView) v.findViewById(R.id.title);
             date = (TextView) v.findViewById(R.id.release_date);
             adult = (TextView) v.findViewById(R.id.adult);
