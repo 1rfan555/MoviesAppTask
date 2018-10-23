@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.irfan.moviesapptask.R;
+import com.irfan.moviesapptask.adapter.MoviesAdapter;
 import com.irfan.moviesapptask.adapter.RecyclerTouchListener;
 import com.irfan.moviesapptask.client.ApiClient;
 import com.irfan.moviesapptask.client.ApiInterface;
@@ -65,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                 //need to create adapter to fetch movie details...
+                recyclerView.setAdapter(new MoviesAdapter(movies, MainActivity.this,getApplicationContext()));
 
             }
 
