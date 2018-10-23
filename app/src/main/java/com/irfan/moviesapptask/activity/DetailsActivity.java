@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.irfan.moviesapptask.R;
+import com.squareup.picasso.Picasso;
 
 public class DetailsActivity extends AppCompatActivity {
     ImageView Poster;
@@ -30,5 +31,20 @@ public class DetailsActivity extends AppCompatActivity {
                 startActivity(new Intent(DetailsActivity.this,MyActivity.class));
             }
         });
+
+        Intent intent = getIntent();
+        Picasso.with(this)
+                .load(intent.getStringExtra("image_name"))
+                .error(R.drawable.error_gallery_image)
+                .into(Poster);
+
+        tvTitle.setText(intent.getStringExtra("movieTitle"));
+        tvRdate.setText(intent.getStringExtra("releaseDate"));
+        tvDesc.setText(intent.getStringExtra("description"));
+        tvVoteAvg.setText(String.valueOf(intent.getDoubleExtra("voteAverage",0)));
+
+
     }
+
+
 }
