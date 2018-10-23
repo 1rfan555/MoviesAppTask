@@ -3,6 +3,8 @@ package com.irfan.moviesapptask.activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -44,6 +46,24 @@ public class DetailsActivity extends AppCompatActivity {
         tvVoteAvg.setText(String.valueOf(intent.getDoubleExtra("voteAverage",0)));
 
 
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+
+        switch (id){
+            case R.id.info:
+                startActivity(new Intent(this,MyActivity.class));
+
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 
