@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -69,8 +70,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<MoviesResponse> call, Response<MoviesResponse> response) {
 
+                int statusCode = response.code();
 
-
+                movies = response.body().getResults();
 
                 //need to create adapter to fetch movie details...
                 recyclerView.setAdapter(new MoviesAdapter(movies, MainActivity.this,getApplicationContext()));
@@ -79,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<MoviesResponse> call, Throwable t) {
+                Log.e(TAG, t.toString());
 
             }
         });
