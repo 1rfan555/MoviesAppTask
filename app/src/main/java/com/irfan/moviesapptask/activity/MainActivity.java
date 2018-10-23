@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import com.irfan.moviesapptask.R;
 import com.irfan.moviesapptask.adapter.MoviesAdapter;
+import com.irfan.moviesapptask.adapter.MyDividerItemDecoration;
 import com.irfan.moviesapptask.adapter.RecyclerTouchListener;
 import com.irfan.moviesapptask.client.ApiClient;
 import com.irfan.moviesapptask.client.ApiInterface;
@@ -44,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.movies_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
+        //add-ItemDecoration
+        recyclerView.addItemDecoration(new MyDividerItemDecoration(this, LinearLayoutManager.VERTICAL, 16));
+
+
         //i'm not doing item touch event by below method...
         /*recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerView, new RecyclerTouchListener.ClickListener() {
             @Override
@@ -63,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<MoviesResponse>() {
             @Override
             public void onResponse(Call<MoviesResponse> call, Response<MoviesResponse> response) {
+
+
 
 
                 //need to create adapter to fetch movie details...

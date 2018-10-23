@@ -25,10 +25,6 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
 
 
 
-
-
-
-
     public static class MovieViewHolder extends RecyclerView.ViewHolder {
         ConstraintLayout moviesLayout;
         TextView movieTitle;
