@@ -67,6 +67,18 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
         holder.movieTitle.setText(movies.get(position).getTitle());
         holder.date.setText(movies.get(position).getReleaseDate());
 
+        holder.moviesLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                activity.callDetailPage(
+                        "http://image.tmdb.org/t/p/w185/"+movies.get(position).getPosterPath(),
+                        movies.get(position).getTitle(),
+                        movies.get(position).getOverview(),
+                        movies.get(position).getReleaseDate(),
+                        movies.get(position).getVoteAverage());
+            }
+        });
+
     }
 
     @Override

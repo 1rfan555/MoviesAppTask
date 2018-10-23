@@ -1,5 +1,6 @@
 package com.irfan.moviesapptask.activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -87,5 +88,16 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    public void callDetailPage(String imagePath, String movieTitle,
+                               String description, String releaseDate, Double voteAverage) {
+        Intent intent = new Intent(MainActivity.this,DetailsActivity.class);
+        intent.putExtra("image_name",imagePath);
+        intent.putExtra("movieTitle", movieTitle);
+        intent.putExtra("description",description);
+        intent.putExtra("releaseDate",releaseDate);
+        intent.putExtra("voteAverage",voteAverage);
+        startActivity(intent);
     }
 }
