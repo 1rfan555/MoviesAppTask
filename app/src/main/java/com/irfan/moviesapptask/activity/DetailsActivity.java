@@ -33,7 +33,7 @@ public class DetailsActivity extends AppCompatActivity {
                 startActivity(new Intent(DetailsActivity.this,MyActivity.class));
             }
         });
-
+//Get movie details from mainactivity
         Intent intent = getIntent();
         Picasso.with(this)
                 .load(intent.getStringExtra("image_name"))
